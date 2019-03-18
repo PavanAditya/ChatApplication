@@ -78,7 +78,8 @@ export class ChatListComponent implements OnInit {
 			return false;
 		}
 		return this.selectedUserId === userId ? true : false;
-	}
+  }
+
 	selectedUser(user: User): void {
 		this.selectedUserId = user.id;
 		this.dataShareService.changeSelectedUser(user);

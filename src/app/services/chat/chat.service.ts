@@ -123,6 +123,7 @@ export class ChatService {
 					return response;
 				},
 				(error) => {
+          alert(error + 'error occured');
 					throw error;
 				}
 			)

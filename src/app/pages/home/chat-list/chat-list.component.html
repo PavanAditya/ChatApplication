@@ -8,13 +8,13 @@
 </div> -->
 
 <ul class="user-list">
-    <li *ngFor="let user of chatListUsers"
-        (click)="selectedUser(user)"
-        [class.active]="isUserSelected(user.id)">
-        {{ user.username }}
-        <span [ngClass]="user.online === 'Y' ? 'online' : 'offline'"> </span>
+  <div *ngFor="let user of chatListUsers">
+    <li (click)="selectedUser(user)" [class.active]="isUserSelected(user.id)">
+      {{ user.username }}
+      <span [ngClass]="user.online === 'Y' ? 'online' : 'offline'"> </span> <br>
     </li>
+  </div>
 </ul>
 <div class="alert" alert-info.class="!loading" *ngIf='chatListUsers.length === 0'>
-    {{ loading && chatListUsers.length === 0 ? 'Loading your chat list.' : 'No User Avilable to chat.'}}
+  {{ loading && chatListUsers.length === 0 ? 'Loading your chat list.' : 'No User Avilable to chat.'}}
 </div>

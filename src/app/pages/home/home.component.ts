@@ -48,6 +48,19 @@ export class HomeComponent implements OnInit {
 		} catch (error) {
 			alert('Something went wrong');
 		}
+  }
+
+  logout() {
+		this.chatService.removeLS()
+			.then((removedLs: boolean) => {
+				this.socketService.logout({ userId: this.userId }).subscribe((response: Auth) => {
+					this.router.navigate(['/']);
+				});
+			})
+			.catch((error: Error) => {
+				alert(' This App is Broken, we are working on it. try after some time.');
+				throw error;
+			});
 	}
 
 }

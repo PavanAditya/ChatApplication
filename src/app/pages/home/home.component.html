@@ -1,3 +1,6 @@
+<div *ngIf="overlayDisplay" class="overlay">
+  <h1>Loading...</h1>
+</div>
 <!-- header section starts -->
 <header class="app-header">
 	<nav class="navbar navbar-expand-md">
@@ -5,13 +8,13 @@
 	</nav>
 	<ul class="nav justify-content-end">
 		<li class="nav-item">
-			<a class="nav-link active" href="#">Logout</a>
+			<a class="nav-link active" (click)="logout()">Logout</a>
 		</li>
 	</ul>
 </header>
 <!-- header section ends -->
 
-<main role="main" class="container content">
+<main role="main" class="container content" *ngIf="!overlayDisplay">
 	<div class="row chat-content">
 		<div class="col-3 chat-list-container">
 			<app-chat-list></app-chat-list>
